@@ -24,5 +24,11 @@ sf = float(s)
 print('sf={}'.format(sf))
 print(type(sf))
 
-si = int(s)
-print('si={}'.format(si))
+# si = int(s)
+# print('si={}'.format(si))
+
+bi = 0b101
+print('bi={}'.format(bi))
+
+xi = 0xf
+print('xi={}'.format(xi))
