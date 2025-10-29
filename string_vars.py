@@ -45,4 +45,11 @@ print(s7.rindex('E'))
 
 
 
+print('--------------------')
+print(ord('a'))
+print(ord('A'))
+print(ord('\t'))
+print(ord('ż'))
+print(ord('ł'))
 
+print(chr(67))
