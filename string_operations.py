@@ -26,7 +26,7 @@ sf = f'f={f/25}, {36363}, {3636}'
 print(sf)
 
 li2 = [ 526, 363653.363, 363267 ]
-sli2 = [ str(x) for x in li2 if x > 600 ]
+sli2 = [ str(x) for x in li2 ] #if x > 600 ]
 
 # sli2 = []
 # for x in li2:

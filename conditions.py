@@ -1,5 +1,5 @@
-p = True
-q = True
+p = False
+q = False
 print(f'p={p} q={q}')
 
 if p != True:
