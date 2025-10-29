@@ -51,5 +51,7 @@ print(ord('A'))
 print(ord('\t'))
 print(ord('ż'))
 print(ord('ł'))
+print('ł')
+
 
 print(chr(67))
