@@ -18,3 +18,9 @@ def change_curr(cur_dict, from_cur, to_cur, value):
 
 
 print(change_curr(cur_dict, 'PLN', 'USD', 100))
+
+line = 'EUR;2312'
+my_arr = line.split(';')
+print(my_arr)
+s1 = '|'.join(my_arr)
+print(s1)
