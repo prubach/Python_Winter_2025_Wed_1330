@@ -1,4 +1,4 @@
-﻿Currency;Value
-EUR;1,00
-PLN;4,20
-USD;1,20
+﻿Currency;Value;Date
+EUR;1;12.11.2025
+PLN;4,2;12.11.2025
+USD;1,2;12.11.2025
