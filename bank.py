@@ -47,3 +47,5 @@ c2 = bank.create_customer('Anne', 'Smith')
 a3 = bank.create_account(c2)
 print(bank)
 
+#TODO deposit, withdraw - with a parameter 'amount'
+
