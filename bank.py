@@ -17,6 +17,20 @@ class Account:
         Account.last_id += 1
         self.id = Account.last_id
 
+    def deposit(self, amount):
+        if amount <= 0:
+            print('Invalid amount to deposit.')
+            raise InvalidAmountException('Invalid amount to deposit.')
+        else:
+            self._balance += amount
+
+    def withdraw(self, amount):
+        if amount > self._balance:
+            print('Insufficient funds.')
+            raise InsufficientFundsException(f'Insufficient funds. {amount}')
+        else:
+            self._balance -= amount
+
     def __repr__(self):
         return f'Acc[{self.id}, {self.customer.last_name}, {self._balance}]'
 
@@ -39,6 +53,17 @@ class Bank:
     def __repr__(self):
         return f'Bank[{self.name}\n{self.account_list}\n{self.customer_list}\n]'
 
+class BankException(Exception):
+    pass
+
+class InsufficientFundsException(BankException):
+    pass
+
+class InvalidAmountException(BankException):
+    pass
+
+
+
 bank = Bank('SGH Bank')
 c1 = bank.create_customer('John', 'Brown')
 a1 = bank.create_account(c1)
@@ -49,3 +74,17 @@ print(bank)
 
 #TODO deposit, withdraw - with a parameter 'amount'
 
+try:
+    a = 500
+    b = 'abfasd ' + a
+    a1.deposit(-500)
+    a1.withdraw(200)
+    print(bank)
+except InsufficientFundsException as e:
+    print(e)
+except BankException as e:
+    print(e)
+except InvalidAmountException as e:
+    print(e)
+#except Exception as e:
+#    print(e)
