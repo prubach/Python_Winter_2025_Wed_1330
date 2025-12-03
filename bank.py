@@ -90,8 +90,8 @@ print(bank)
 
 try:
     a = 500
-    b = 'abfasd ' + a
-    a1.deposit(-500)
+    #b = 'abfasd ' + a
+    a1.deposit(500)
     a1.withdraw(200)
     print(bank)
 except InsufficientFundsException as e:
@@ -100,5 +100,7 @@ except BankException as e:
     print(e)
 except InvalidAmountException as e:
     print(e)
+finally:
+    print('All Done!!!')
 #except Exception as e:
 #    print(e)
