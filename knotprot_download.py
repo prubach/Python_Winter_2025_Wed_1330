@@ -6,7 +6,7 @@ from urllib.request import urlopen, Request
 from time import time
 from PIL import Image
 
-SEARCH_STRING = 'https://knotprot.cent.uw.edu.pl/browse/?set=True&bridgeType=probab&slipknotTypes=41&raw=1'
+SEARCH_STRING = 'https://knotprot.cent.uw.edu.pl/browse/?set=True&bridgeType=probab&knotTypes=%2B31&array=0&raw=1'
 DOWNLOAD_LINK = 'https://knotprot.cent.uw.edu.pl/static/knot_data/{0}/{1}/{0}_{1}.png'
 
 logger = logging.getLogger(__name__)
@@ -31,10 +31,10 @@ def download_link(directory, protein):
     logger.info('Downloaded %s', link)
 
 
-def setup_download_dir():
-    download_dir = Path('images')
+def setup_download_dir(my_dir):
+    download_dir = Path(my_dir)
     if download_dir.exists():
-        shutil.rmtree('images', ignore_errors=True)
+        shutil.rmtree(my_dir, ignore_errors=True)
     if not download_dir.exists():
         download_dir.mkdir()
     return str(download_dir)
