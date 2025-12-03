@@ -43,7 +43,7 @@ class Account(Base):
         self.customer = customer
         #Account.last_id += 1
         #self.id = Account.last_id
-        self._balance = 0
+        self.balance = 0
 
     def deposit(self, amount):
         #TODO - as part of the home assignment please extend this method
@@ -51,18 +51,18 @@ class Account(Base):
             print('Invalid amount.')
             raise InvalidAmountException(f'Invalid amount: {amount}')
         else:
-            self._balance += amount
+            self.balance += amount
 
     def charge(self, amount):
         #TODO - as part of the home assignment please extend this method
-        if amount > self._balance:
+        if amount > self.balance:
             print('Insufficient funds.')
             raise InsufficientFundsException(f'Insufficient funds: {amount}')
         else:
-            self._balance -= amount
+            self.balance -= amount
 
     def __repr__(self):
-        return f'Acc[{self.id}, {self.customer.last_name}, {self._balance}]'
+        return f'Acc[{self.id}, {self.customer.last_name}, {self.balance}]'
 
 class Bank(Base):
     __tablename__ = 'bank'

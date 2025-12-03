@@ -1,3 +1,5 @@
+from sqlalchemy import and_, or_
+
 from bank_model import Bank, Customer, Account, init_db, DBSession
 
 db = DBSession().db_session()
@@ -25,9 +27,10 @@ def add_data():
 
 
 def get_customers():
-    customers = db.query(Customer).filter(Customer.last_name=='Smith').all()
+    customers = db.query(Customer).filter(or_(Customer.last_name=='Smith', Customer.first_name.startswith('Jo'))).all()
     for c in customers:
         print(c)
+        print(c.accounts)
 
 
 if __name__ == '__main__':
